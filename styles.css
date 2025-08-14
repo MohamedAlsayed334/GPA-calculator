@@ -374,4 +374,139 @@ footer {
 
 ::-webkit-scrollbar-thumb:hover {
     background: color-mix(in srgb, var(--primary-color) 85%, white);
+
+}
+/* -----------------------------------------------
+/* -----------------------------------------------
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .gpa-display {
+        padding: 20px;
+    }
+
+    .gpa-value {
+        font-size: 3rem;
+    }
+
+    .course-form,
+    .course-list {
+        padding: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    select,
+    input {
+        padding: 12px;
+    }
+
+    button {
+        padding: 14px;
+    }
+
+    th,
+    td {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+    .remove-btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .gpa-value {
+        font-size: 2.5rem;
+    }
+
+    .styled-select {
+        padding: 12px 16px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .btn-primary {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Touch targets */
+button,
+select {
+    min-height: 44px;
+    /* Recommended minimum touch target size */
+}
+
+/* Prevent zoom on input focus */
+@media screen and (max-width: 768px) {
+
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+        /* Prevent iOS zoom */
+    }
+}
+
+/* Better table display on mobile */
+@media (max-width: 600px) {
+    table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Mobile-specific styles */
+.mobile-device .course-form {
+    padding: 15px;
+}
+
+.mobile-device .form-group {
+    margin-bottom: 12px;
+}
+
+.mobile-device .btn-primary {
+    font-size: 1rem;
+    padding: 16px;
+}
+
+/* Better dropdown appearance on mobile */
+.mobile-device .styled-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-size: 12px;
+    padding-right: 30px;
 }
