@@ -376,137 +376,103 @@ footer {
     background: color-mix(in srgb, var(--primary-color) 85%, white);
 
 }
-/* -----------------------------------------------
-/* -----------------------------------------------
-/* Mobile Responsiveness */
+
+/* Mobile Responsiveness - Wider Layout */
 @media (max-width: 768px) {
     .container {
-        padding: 20px 15px;
-    }
-
-    h1 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-    }
-
-    .gpa-display {
         padding: 20px;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    .gpa-value {
-        font-size: 3rem;
-    }
-
+    .gpa-display,
     .course-form,
     .course-list {
-        padding: 20px;
+        width: calc(100% - 40px);
+        /* Full width minus padding */
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 12px;
+        /* Slightly smaller radius for mobile */
     }
 
+    /* More spacious table layout */
+    table {
+        width: 100%;
+        display: table;
+        /* Reset any previous block display */
+    }
+
+    /* Wider form elements */
     .form-group {
-        margin-bottom: 15px;
+        width: 100%;
     }
 
     select,
     input {
-        padding: 12px;
-    }
-
-    button {
-        padding: 14px;
-    }
-
-    th,
-    td {
-        padding: 10px 12px;
-        font-size: 0.9rem;
-    }
-
-    .remove-btn {
-        padding: 6px 10px;
-        font-size: 0.8rem;
-    }
-
-    .theme-toggle {
-        top: 10px;
-        right: 10px;
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 
-@media (max-width: 480px) {
+/* Larger phones landscape and tablets */
+@media (min-width: 481px) and (max-width: 768px) {
     .container {
-        padding: 15px 10px;
+        padding: 25px;
     }
 
+    .gpa-display {
+        padding: 25px;
+    }
+}
+
+/* Small phones portrait */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    /* Slightly reduce font sizes for very small screens */
     h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .gpa-value {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
-    .styled-select {
-        padding: 12px 16px;
+    /* Make buttons full width but with better spacing */
+    button {
+        width: 100%;
+        margin: 5px 0;
     }
 
-    table {
-        display: block;
-        overflow-x: auto;
+    /* Adjust table cell padding */
+    th,
+    td {
+        padding: 8px 10px;
+    }
+}
+
+/* Prevent awkward line breaks */
+@media (max-width: 480px) {
+    .remove-btn {
         white-space: nowrap;
     }
 
-    .btn-primary {
-        padding: 12px;
-        font-size: 0.9rem;
+    .btn-primary span {
+        display: inline-block;
     }
 }
 
-/* Touch targets */
-button,
-select {
-    min-height: 44px;
-    /* Recommended minimum touch target size */
-}
-
-/* Prevent zoom on input focus */
-@media screen and (max-width: 768px) {
-
-    input,
-    select,
-    textarea {
-        font-size: 16px;
-        /* Prevent iOS zoom */
-    }
-}
-
-/* Better table display on mobile */
-@media (max-width: 600px) {
-    table {
-        width: 100%;
-        display: block;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-}
-
-/* Mobile-specific styles */
-.mobile-device .course-form {
-    padding: 15px;
-}
-
-.mobile-device .form-group {
-    margin-bottom: 12px;
-}
-
-.mobile-device .btn-primary {
-    font-size: 1rem;
-    padding: 16px;
-}
-
-/* Better dropdown appearance on mobile */
-.mobile-device .styled-select {
-    appearance: none;
+/* Better select dropdown appearance */
+select.styled-select {
     -webkit-appearance: none;
-    background-size: 12px;
-    padding-right: 30px;
+    -moz-appearance: none;
+    appearance: none;
+    background-position: right 15px center;
+    background-repeat: no-repeat;
+    padding-right: 40px;
 }
+
