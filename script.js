@@ -206,4 +206,28 @@ document.addEventListener('DOMContentLoaded', function () {
             this.parentElement.classList.remove('select-focused');
         });
     });
+
+});
+//-------------------------------
+//-------------------------------
+// Detect mobile devices
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+// Add mobile class if needed
+if (isMobile()) {
+    document.body.classList.add('mobile-device');
+}
+
+// Prevent form zoom on focus (iOS specific)
+document.addEventListener('DOMContentLoaded', function () {
+    if (isMobile()) {
+        document.querySelectorAll('select').forEach(select => {
+            select.addEventListener('focus', function () {
+                window.scrollTo(0, 0);
+                document.body.scrollTop = 0;
+            });
+        });
+    }
 });
