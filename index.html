@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="theme-toggle floating">
+        <button id="toggleTheme" class="btn-icon" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <div class="container">
+        <h1>GPA Calculator</h1>
+
+        <div class="gpa-display">
+            <h2>Your Current GPA is:</h2>
+            <div class="gpa-value" id="currentGpa">-</div>
+        </div>
+
+        <div class="course-form">
+            <div class="form-group">
+                <label for="gradeSelect">Course Grade:</label>
+                <div class="select-wrapper">
+                    <select id="gradeSelect" class="styled-select">
+                        <option value="" disabled selected>Select a grade</option>
+                        <option value="4.0">A+ (4.0)</option>
+                        <option value="3.7">A (3.7)</option>
+                        <option value="3.4">A- (3.4)</option>
+                        <option value="3.2">B+ (3.2)</option>
+                        <option value="3.0">B (3.0)</option>
+                        <option value="2.8">B- (2.8)</option>
+                        <option value="2.6">C+ (2.6)</option>
+                        <option value="2.4">C (2.4)</option>
+                        <option value="2.2">C- (2.2)</option>
+                        <option value="2.0">D+ (2.0)</option>
+                        <option value="1.5">D (1.5)</option>
+                        <option value="1.0">D- (1.0)</option>
+                        <option value="0.0">F (0.0)</option>
+                    </select>
+                    <div class="select-arrow">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="creditSelect">Credit Hours:</label>
+                <div class="select-wrapper">
+                    <select id="creditSelect" class="styled-select">
+                        <option value="1">1 credit</option>
+                        <option value="2" selected>2 credits</option>
+                        <option value="3">3 credits</option>
+                        <option value="4">4 credits</option>
+                    </select>
+                    <div class="select-arrow">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <button id="addCourse" class="btn-primary">
+                <span class="btn-content">Add Course</span>
+                <span class="btn-icon"><i class="fas fa-plus"></i></span>
+            </button>
+        </div>
+
+        <div class="course-list" id="courseListContainer">
+            <h3>Your Courses</h3>
+            <p id="noCoursesMessage">No courses added yet.</p>
+            <table id="coursesTable" class="hidden">
+                <thead>
+                    <tr>
+                        <th>Grade</th>
+                        <th>Credit Hours</th>
+                        <th>Grade Points</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="coursesTableBody">
+                    <!-- Courses will be added here dynamically -->
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <p>© 2025 All rights reserved for Mohamed Alsayed</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
